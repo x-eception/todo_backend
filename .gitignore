@@ -1,0 +1,55 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.*
+
+# Firebase or other secret keys
+todo-list13-firebase-adminsdk-fbsvc-40e6ec3487.json
+
+# Build output
+dist/
+build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sw?
+
+# Optional npm cache directory
+.npm/
+
+# Coverage directory used by testing tools
+coverage/
+
+# Debugger configurations
+node-inspector.js
+
+# Misc
+*.tgz
+*.bak
+*.orig
+
+# Ignore test coverage data
+.nyc_output/
+
+echo ".env" >> .gitignore
+echo "todo-list13-firebase-adminsdk-fbsvc-40e6ec3487.json" >> .gitignore
