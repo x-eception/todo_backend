@@ -18,7 +18,7 @@ const db = admin.firestore();
 const app = express();
 
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: process.env.CORS_ORIGIN || 'https://todo-frontend-nu-weld.vercel.app',
   credentials: true
 }));
 app.use(express.json());
