@@ -17,11 +17,24 @@ const db = admin.firestore();
 
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://todo-frontend-nu-weld.vercel.app'
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'https://todo-frontend-nu-weld.vercel.app',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('CORS not allowed for this origin: ' + origin), false);
+    }
+  },
   credentials: true
 }));
-app.use(express.json());
+
 
 // 🔒 Auth middleware
 app.use(async (req, res, next) => {
